@@ -6,16 +6,11 @@
 # возвращающую True, если год високосный, и False иначе.
 
 def is_year_leap(year):
-    """
 
-    :rtype: Bool
-    """
     if (year % 4 == 0 and year % 100 != 0) or year % 400 == 0:
-        result = True
+        return True
     else:
-        result = False
-
-    return result
+        return False
 
 n = int(input(""" — Hey, Doc!
  — Hey, Marty! Are you ready? We are going to [please enter a year]!\n"""))
@@ -29,11 +24,9 @@ print(b)
 
 def does_it_exist(a, b, c):
     if a + b > c and a + c > b and b + c > a:
-        result = True
+        return True
     else:
-        result = False
-
-    return result
+        return False
 
 x = float(input("Please enter first side of the triangle:\n"))
 y = float(input("Please enter second side of the triangle:\n"))

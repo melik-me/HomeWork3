@@ -23,7 +23,11 @@
 
 while True:
     s = input("Please enter a string with at least 6 symbols:\n")
-    if len(s) >= 6:
+    try:
+        c = s[5]
+    except IndexError:
+        print("String you've entered it too small.")
+    else:
         break
 
 print(s[2], s[-2], s[:5], s[:-2], s[0:len(s):2], s[1:len(s):2], s[::-1], s[::-2], s[len(s)-2:0:-1], len(s), sep='\n')

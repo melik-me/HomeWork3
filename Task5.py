@@ -8,10 +8,12 @@
 
 # Посчитайте сколько слов в тексте (разбейте на слова методом строк split)
 
-s = ("We are not what we should be! \n"
-     "We are not what we need to be. \n"
-     "But at least we are not what we used to be \n"
-     "(Football Coach)")
+s = ("""We are not what we should be!
+We are not what we need to be.
+But at least we are not what we used to be
+(Football Coach)""")
+
+s = s.replace('\n', ' ')
 
 l = s.split(' ')
 
@@ -41,11 +43,15 @@ print(l)
 
 d = dict()
 
-while len(l) > 0:
-    n = l.count(l[0])
-    d[l[0]] = n
-    s = l[0]
-    for i in range(n, 0, -1):
-        l.remove(s)
+# while len(l) > 0:
+#     n = l.count(l[0])
+#     d[l[0]] = n
+#     s = l[0]
+#     for i in range(n, 0, -1):
+#         l.remove(s)
+
+for word in l:
+    n = l.count(word)
+    d[word] = n
 
 print(d)

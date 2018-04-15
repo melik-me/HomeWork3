@@ -7,22 +7,27 @@
 from copy import deepcopy
 
 l = list()
-i = 0
+# i = 0
+#
+# while True:
+#     l.append(input("Please enter an element of a list (It should be a number) or press Enter to finish:\n"))
+#     if len(l[-1]) == 0:
+#         l.remove('')
+#         break
+#     l[i] = int(l[i])
+#     i += 1
 
 while True:
-    l.append(input("Please enter an element of a list (It should be a number) or press Enter to finish:\n"))
-    if len(l[-1]) == 0:
-        l.remove('')
+    s = input("Please enter an element of a list (It should be a number) or press Enter to finish:\n")
+    if len(s) == 0:
         break
-    l[i] = int(l[i])
-    i += 1
-
+    l.append(int(s))
 
 l2 = deepcopy(l)
 
 print('This is your list:', l)
 
-while len(l) > 0:
+while l:
     print(l.pop(0))
     print(l)
 
@@ -31,7 +36,7 @@ while len(l) > 0:
 
 s = input("Please enter a string:\n")
 
-while len(s) > 0:
+while s:
     print(s[0])
     s = s[1:]
     print(s)
@@ -45,7 +50,7 @@ l2.sort()
 
 print(l3)
 
-while len(l3) > 0:
+while l3:
     print(l2[0])
     l3.remove(l2[0])
     print(l3)
